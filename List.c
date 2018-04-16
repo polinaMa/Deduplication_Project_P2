@@ -58,7 +58,6 @@ void listDestroy(List list) {
     if (!list) {
         return;
     }
-    printf("List Size is: %d\n", list->size);
     destroyNodes_NonRec(list->first, list->freeElement);
     free(list);
 }

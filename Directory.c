@@ -72,9 +72,7 @@ ErrorCode dir_set_parent_dir_sn(Dir dir , unsigned long sn){
 void dir_destroy(Dir dir){
     assert(dir);
     free(dir->dir_id);
-    printf("List Destroy - DIR - SUB_DIRS - %lu \n",dir->dir_sn);
     listDestroy(dir->dirs_list);
-    printf("List Destroy - DIR - SUB_FILES - %lu \n",dir->dir_sn);
     listDestroy(dir->files_list);
     free(dir);
 }

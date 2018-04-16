@@ -49,14 +49,7 @@ File file_create(char* file_id , unsigned int depth , unsigned long file_sn , un
 
 void file_destroy(File file , char dedup_type){
     assert(file);
-    printf("List Destroy - FILE - %lu \n",file->file_sn);
-    if((file->file_sn) == 9880){
-        printf("Sarit HAdad <3 \n");
-        listDestroy(file->blocks_list);
-    } else {
-        listDestroy(file->blocks_list);
-    }
-    //listDestroy(file->blocks_list);
+    listDestroy(file->blocks_list);
     free(file->file_id);
     if(dedup_type == 'F'){
         listDestroy(file->logical_files_list);
